@@ -3,6 +3,8 @@
 # Overview
 Endpoint Local Administrator is a Power Platform solution that allows you to add and remove users as local administrators on an Intune device from a Power App. No more needing to assign the **Azure AD joined device local administrator** role.
 
+![Dashboard](/images/ELA_Dashboard.png)
+
 **Note: Currently, this solution utilizes PowerShell to add and remove local administrators. Once Microsoft _further develops the Graph API for Account Protection_, I will re-work the solution and switch it over to that.**
 
 ## Features
