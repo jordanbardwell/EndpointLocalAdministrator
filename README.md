@@ -13,8 +13,11 @@ Endpoint Local Administrator is a Power Platform solution that allows you to add
 - Remove user from local administrator
 
 ### Job Overview
+View the status of a job.
+![Job Overview](/images/ELA_JobOverview.png)
 
 ### Notifications
+Receive Teams and/or Outlook notifications.
 
 # Install
 Premium licensing in Power Platform is required for this solution to function since it utilizes Dataverse and other premium connectors. You will need Power Automate per user or Power Automate per flow, AND Power Apps per User, App Passes, or Pay as you go.
