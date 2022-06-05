@@ -60,3 +60,17 @@ You'll need to create an originator ID from the **[Actionable Email Developer Da
       - **AdaptiveCardOriginatorGUID:** *Originator ID from [Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)*
       - **EnvironmentPublisherPrefix:** *Your environment publisher prefix*
  4. Turn on each Flow within the solution.
+
+# How to Guide
+
+## Managing a Local Administrator
+1. On the main screen, select **Manage Device**
+2. Enter an Intune device name then select **Search**
+3. **Scroll down** to the bottom and adjust the configuration to your desired settings.
+4. Select **submit**.
+
+## Modifying Notification Users
+To modify Teams or Outlook users to notify upon various job statuses, click the **gear icon** on the top-right of the app. From there, you'll be able to add and remove users.
+
+## Sharing the Power App
+When sharing the Power App, make sure to assign the user or group the **ELA - Administrator** Dataverse security role.
