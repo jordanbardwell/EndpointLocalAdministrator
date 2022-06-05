@@ -13,7 +13,9 @@ Endpoint Local Administrator is a Power Platform solution that allows you to add
 - Remove user from local administrator
 
 ### Job Overview
-View the status of a job. If a job is deleted, Azure AD Group(s) and Script(s) associated with the job will be deleted.
+View the status of a job.
+
+***If a job is deleted, Azure AD Group(s) and Script(s) associated with the job will be deleted.***
 ![Job Overview](/images/ELA_JobOverview.png)
 
 ### Notifications
