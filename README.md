@@ -73,24 +73,27 @@ You'll need to create an originator ID from the **[Actionable Email Developer Da
 
 *Leave the security role blank. We will come back to this later after importing the solution.*
 
-## Installation Instructions
+## 5. Create Dataverse Application User Connection
+Before we import the solution, we need to create the Dataverse Application User Connection.
+1. Go to [Power Automate](https://us.flow.microsoft.com/)
+2. **Select the environment** from the top-right that you'll be importing the solution into.
+3. Select **Create** on the left-side toolbar and select Instant Cloud Flow
+4. On the new flow page, select one of the **Dataverse** triggers or actions.
+5. Click the elipses on the action (...) and select **Add New Connection**
+6. Select **Connect with service principal** and name the connection. Ex: *ELA - Application User*
+7. Enter in the Tenant ID, Client ID, and Client Secret from the app registration you created earlier.
+8. Select **Create**.
+
+*At this point the service principal connection should be created. You can close out of this flow without saving it.*
+
+## 6. Import Solution
 1. Download the un-managed zip file
-2. Create an App Registration in Azure AD.
-    - Grant the App Registration the following **Microsoft Graph - _Application_** API Permissions:
-      - Device.Read.All
-      - DeviceManagementConfiguration.ReadWrite.All
-      - DeviceManagementManagedDevices.Read.All
-      - Directory.Read.All
-      - Group.ReadWrite.All
-      - GroupMember.ReadWrite.All
-    - Once granted, **_Grant admin consent_**.
-    - Create a client secret and save the **secret value**.
-3. Import the solution into an environment.
+2. Import the solution into your environment.
     - Set the following environment variables:
       - **AppRegistration_ClientID:** *Use the Application(client) ID from the App Registration you created*
       - **AppRegistration_ClientSecret:** *Use the client secret you created*
       - **AppRegistration_TenantID:** *Use your tenant id*
-      - **MothershipURI:** *Copy the URL from the from **Flow - PowerShell Script Listener** within the solution.*
+      - **MothershipURI:** *Leave this blank for now.*
       - **AdaptiveCardOriginatorGUID:** *Originator ID from [Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)*
       - **EnvironmentPublisherPrefix:** *Your environment publisher prefix*
  4. Turn on each Flow within the solution.
