@@ -14,6 +14,7 @@ Endpoint Local Administrator is a Power Platform solution that allows you to add
 
 ### Temporary Local Administrators
 When assigning a temporary local administrator, the job goes into a sleeping state once the user has been added. A flow runs every 4 hours in the background to compare the date the granted date vs the ending date you selected. Once it has been reached, the job will move to a removing permissions state and remove the user from local administrator.
+![Configure a Temporary Local Administrator](/images/ELA_Temporary_Configuration.png)
 
 ### Job Overview
 View the status of a job.
