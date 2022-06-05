@@ -8,10 +8,13 @@ Endpoint Local Administrator is a Power Platform solution that allows you to add
 **Note: Currently, this solution utilizes PowerShell to add and remove local administrators. Once Microsoft _further develops the Graph API for Account Protection_, I will re-work the solution and switch it over to that.**
 
 ## Features
-Below is a list of features:
 - Add user permanently as a local administrator
 - Add user temporarily as a local administrator
 - Remove user from local administrator
+
+### Job Overview
+
+### Notifications
 
 # Install
 Premium licensing in Power Platform is required for this solution to function since it utilizes Dataverse and other premium connectors. You will need Power Automate per user or Power Automate per flow, AND Power Apps per User, App Passes, or Pay as you go.
