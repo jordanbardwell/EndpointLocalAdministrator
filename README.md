@@ -12,6 +12,9 @@ Endpoint Local Administrator is a Power Platform solution that allows you to add
 - Add user temporarily as a local administrator
 - Remove user from local administrator
 
+### Temporary Local Administrators
+When assigning a temporary local administrator, the job goes into a sleeping state once the user has been added. A flow runs every 4 hours in the background to compare the date the granted date vs the ending date you selected. Once it has been reached, the job will move to a removing permissions state and remove the user from local administrator.
+
 ### Job Overview
 View the status of a job.
 
@@ -23,7 +26,7 @@ Receive Teams and/or Outlook adaptivbe card notifications.
 
 ![Admin Removed](/images/ELA_Remove_Notification.png)
 
-**Note:** *Adaptive Card notifications are only viewable in Microsoft Teams and Microsoft Outlook*
+**Note:** *Adaptive Card notifications are only viewable in Microsoft Teams and Microsoft Outlook. Adaptive cards will not render on other email clients.*
 
 # Install
 ## Licensing
@@ -38,6 +41,8 @@ You'll need to create an originator ID from the **[Actionable Email Developer Da
 3. Select the **Solutions** tab on the left-side of the page.
 4. Select the **Publishers** tab on the top
 5. Notate the prefix of the publisher you will use during import. **Example:** *crfb2*
+
+## Create Dataverse Service Principal
 
 ## Installation Instructions
 1. Download the un-managed zip file
