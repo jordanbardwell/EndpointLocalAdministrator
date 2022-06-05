@@ -17,10 +17,15 @@ View the status of a job.
 ![Job Overview](/images/ELA_JobOverview.png)
 
 ### Notifications
-Receive Teams and/or Outlook notifications.
+Receive Teams and/or Outlook adaptivbe card notifications.
+
+![Admin Removed](/images/ELA_Remove_Notification.png)
+
+**Note:** *Adaptive Card notifications are only viewable in Microsoft Teams and Microsoft Outlook*
 
 # Install
-Premium licensing in Power Platform is required for this solution to function since it utilizes Dataverse and other premium connectors. You will need Power Automate per user or Power Automate per flow, AND Power Apps per User, App Passes, or Pay as you go.
+## Licensing
+Premium licensing in Power Platform is required for this solution to function since it utilizes Dataverse and other premium connectors. You will need Power Automate per user or Power Automate per flow AND either Power Apps per User, App Passes, or Pay as you go subscription.
 
 ## Create Originator ID for Actionable Emails
 You'll need to create an originator ID from the **[Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)**. This will allow you to send actionalable messages within your organization. This is needed if you want to receive alerts via Outlook.
