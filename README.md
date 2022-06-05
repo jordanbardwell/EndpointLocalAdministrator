@@ -89,6 +89,7 @@ Before we import the solution, we need to create the Dataverse Application User 
 ## 6. Import Solution
 1. Download the un-managed zip file
 2. Import the solution into your environment.
+    - On the first Import page, expand **Advanced Settings** and un-check **Enable plugin steps and flows included in this solution**
     - When setting up the connections, use the *ELA - Application User* connection for the **ELA - Service Principal connection reference.**
       - For Microsoft Teams and Outlook, use an account you want to send the notifications from. This account will need to be licensed for Teams and Outlook.
     - Set the following environment variables:
@@ -98,7 +99,9 @@ Before we import the solution, we need to create the Dataverse Application User 
       - **MothershipURI:** *Leave this blank for now.*
       - **AdaptiveCardOriginatorGUID:** *Originator ID from [Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)*
       - **EnvironmentPublisherPrefix:** *Your environment publisher prefix*
- 4. Turn on each Flow within the solution.
+ 3. Once the solution has been imported, turn on and edit the flow **Flow - Process Request - PowerShell Script Listener** and copy the HTTP Post URL from the trigger.
+ 4. Update the environment variable **MothershipURI** with the URL you just copied.
+ 5. Turn on the rest of the Flows within the solution.
 
 # How to Guide
 
