@@ -17,10 +17,13 @@ When assigning a temporary local administrator, the job goes into a sleeping sta
 ![Configure a Temporary Local Administrator](/images/ELA_Temporary_Configuration.png)
 
 ### Job Overview
-View the status of a job.
-
 ***If a job is deleted, Azure AD Group(s) and Script(s) associated with the job will be deleted.***
+Job overview of granting a permanent administrator
+
 ![Job Overview](/images/ELA_JobOverview.png)
+
+Job overview of granting a temporary administrator
+![Job Overview](/images/ELA_Temporary_JobOverview.png)
 
 ### Notifications
 Receive Teams and/or Outlook adaptivbe card notifications.
@@ -29,21 +32,46 @@ Receive Teams and/or Outlook adaptivbe card notifications.
 
 **Note:** *Adaptive Card notifications are only viewable in Microsoft Teams and Microsoft Outlook. Adaptive cards will not render on other email clients.*
 
-# Install
+# Installation Instructions
 ## Licensing
 Premium licensing in Power Platform is required for this solution to function since it utilizes Dataverse and other premium connectors. You will need Power Automate per user or Power Automate per flow AND either Power Apps per User, App Passes, or Pay as you go subscription.
 
-## Create Originator ID for Actionable Emails
+## 1. Create Originator ID for Actionable Emails
 You'll need to create an originator ID from the **[Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)**. This will allow you to send actionalable messages within your organization. This is needed if you want to receive alerts via Outlook.
 
-## Find Environment Publisher Prefix
+## 2. Find Environment Publisher Prefix
 1. Go to [Power Apps](https://make.powerapps.com)
 2. Select the **environment** from the **top-right corner** you'll be installing the solution in.
 3. Select the **Solutions** tab on the left-side of the page.
 4. Select the **Publishers** tab on the top
 5. Notate the prefix of the publisher you will use during import. **Example:** *crfb2*
 
-## Create Dataverse Service Principal
+## 3. Create an App Registration in Azure AD
+1. Go to [Azure Active Directory Admin Center](https://aad.portal.azure.com/)
+2. Select **App Registrations**
+3. Select **New Registration**. 
+    1. Name the App Registration. Ex: *Endpoint Local Administrator*
+    2. Leave everything else as the default settings. Select **Register**
+    3. Grant the App Registration the following **Microsoft Graph - _Application_** API Permissions:
+        - Device.Read.All
+        - DeviceManagementConfiguration.ReadWrite.All
+        - DeviceManagementManagedDevices.Read.All
+        - Directory.Read.All
+        - Group.ReadWrite.All
+        - GroupMember.ReadWrite.All
+    4. Once granted, **_Grant admin consent_**.
+    5. Create a client secret and save the **secret value**.
+
+## 4. Create Dataverse Application User
+1. Go to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/home)
+2. Seelct **Environments** tab
+3. Select the **environment** you'll be importing the solution into and select **Settings** on the toolbar
+4. Expand **Users + Permissions**
+5. Select **Application Users** and select **New App User**
+6. Select **Add an app** and select the App Registraition you created then select Add
+7. Select your **business unit** and select **Create**
+
+*Leave the security role blank. We will come back to this later after importing the solution.*
 
 ## Installation Instructions
 1. Download the un-managed zip file
