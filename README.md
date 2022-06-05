@@ -89,6 +89,8 @@ Before we import the solution, we need to create the Dataverse Application User 
 ## 6. Import Solution
 1. Download the un-managed zip file
 2. Import the solution into your environment.
+    - When setting up the connections, use the *ELA - Application User* connection for the **ELA - Service Principal connection reference.**
+      - For Microsoft Teams and Outlook, use an account you want to send the notifications from. This account will need to be licensed for Teams and Outlook.
     - Set the following environment variables:
       - **AppRegistration_ClientID:** *Use the Application(client) ID from the App Registration you created*
       - **AppRegistration_ClientSecret:** *Use the client secret you created*
