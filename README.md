@@ -29,6 +29,7 @@ Job overview of granting a temporary administrator
 
 ### Notifications
 Receive Teams and/or Outlook adaptivbe card notifications.
+
 ![Completed](/images/ELA_Complete_Notification.png)
 
 **Note:** *Adaptive Card notifications are only viewable in Microsoft Teams and Microsoft Outlook. Adaptive cards will not render on other email clients.*
