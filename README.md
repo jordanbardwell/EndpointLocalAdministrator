@@ -39,14 +39,7 @@ Premium licensing in Power Platform is required for this solution to function si
 ## 1. Create Originator ID for Actionable Emails
 You'll need to create an originator ID from the **[Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)**. This will allow you to send actionalable messages within your organization. This is needed if you want to receive alerts via Outlook.
 
-## 2. Find Environment Publisher Prefix
-1. Go to [Power Apps](https://make.powerapps.com)
-2. Select the **environment** from the **top-right corner** you'll be installing the solution in.
-3. Select the **Solutions** tab on the left-side of the page.
-4. Select the **Publishers** tab on the top
-5. Notate the prefix of the publisher you will use during import. **Example:** *crfb2*
-
-## 3. Create an App Registration in Azure AD
+## 2. Create an App Registration in Azure AD
 1. Go to [Azure Active Directory Admin Center](https://aad.portal.azure.com/)
 2. Select **App Registrations**
 3. Select **New Registration**. 
@@ -62,7 +55,7 @@ You'll need to create an originator ID from the **[Actionable Email Developer Da
     4. Once granted, **_Grant admin consent_**.
     5. Create a client secret and save the **secret value**.
 
-## 4. Create Dataverse Application User
+## 3. Create Dataverse Application User
 1. Go to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/home)
 2. Seelct **Environments** tab
 3. Select the **environment** you'll be importing the solution into and select **Settings** on the toolbar
@@ -73,7 +66,7 @@ You'll need to create an originator ID from the **[Actionable Email Developer Da
 
 *Leave the security role blank. We will come back to this later after importing the solution.*
 
-## 5. Create Dataverse Application User Connection
+## 4. Create Dataverse Application User Connection
 Before we import the solution, we need to create the Dataverse Application User Connection.
 1. Go to [Power Automate](https://us.flow.microsoft.com/)
 2. **Select the environment** from the top-right that you'll be importing the solution into.
@@ -86,7 +79,7 @@ Before we import the solution, we need to create the Dataverse Application User 
 
 *At this point the service principal connection should be created. You can close out of this flow without saving it.*
 
-## 6. Import Solution
+## 5. Import Solution
 1. Download the un-managed zip file
 2. Import the solution into your environment.
     - On the first Import page, expand **Advanced Settings** and un-check **Enable plugin steps and flows included in this solution**
@@ -97,9 +90,9 @@ Before we import the solution, we need to create the Dataverse Application User 
       - **AppRegistration_ClientSecret:** *Use the client secret you created*
       - **AppRegistration_TenantID:** *Use your tenant id*
       - **MothershipURI:** *Leave this blank for now.*
-      - **AdaptiveCardOriginatorGUID:** *Originator ID from [Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)*
-      - **EnvironmentPublisherPrefix:** *Your environment publisher prefix*
- 3. Once the solution has been imported, turn on and edit the flow **Flow - Process Request - PowerShell Script Listener** and copy the HTTP Post URL from the trigger.
+      - **OriginatorID:** *Originator ID from [Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish)*
+
+ 3. Once the solution has been imported, turn on then edit the flow **Flow - Process Request - PowerShell Script Listener** and copy the HTTP Post URL from the trigger.
  4. Update the environment variable **MothershipURI** with the URL you just copied.
  5. Turn on the rest of the Flows within the solution.
 
