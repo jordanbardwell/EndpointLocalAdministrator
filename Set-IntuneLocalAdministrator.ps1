@@ -8,7 +8,7 @@ $URI = "URIChangeMe"
 ## Function: Logging
 #$HostName = $env:computername
 #$ScriptName = $MyInvocation.MyCommand.Name.Replace(".ps1","")
-$LogfileName = "Set-IntuneLocalAdministrator"
+$LogfileName = "Set-IntuneLocalAdministrator_$ConfirmationID"
 $LogLocation = "C:\Windows\Logs\Endpoint Local Administrator"
 function Write-Log
 {
