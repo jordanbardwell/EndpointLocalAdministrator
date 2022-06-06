@@ -117,4 +117,4 @@ When sharing the Power App, make sure to assign the user or group the **ELA - Ad
 If any error is encountered in the flows, the status of a job will change to **error**. The flow id and run id will be stored and sent in a notification via Teams/Email. From there, you'll be able to view the flow to see what went wrong.
 
 ## Script Errors
-Currently, this solution uses PowerShell to add and remove local administrators. Each time the script runs on a device, a log file is created under: 
+Currently, this solution uses PowerShell to add and remove local administrators. Each time the script runs on a device, a log file is created under: C:\Windows\Logs\Endpoint Local Administrator
