@@ -7,6 +7,8 @@ Endpoint Local Administrator is a Power Platform solution that allows you to add
 
 **Note: Currently, this solution utilizes PowerShell to add and remove local administrators. Once Microsoft _further develops the Graph API for Account Protection_, I will re-work the solution and switch it over to that.**
 
+This app utilizes some components from Microsoft's Fluent UI. I'm not a UI person, but I wanted to make this feel somewhat nice.
+
 ## Features
 - Add user permanently as a local administrator
 - Add user temporarily as a local administrator
@@ -109,3 +111,10 @@ To modify Teams or Outlook users to notify upon various job statuses, click the 
 
 ## Sharing the Power App
 When sharing the Power App, make sure to assign the user or group the **ELA - Administrator** Dataverse security role.
+
+# Troubleshooting
+## General Errors
+If any error is encountered in the flows, the status of a job will change to **error**. The flow id and run id will be stored and sent in a notification via Teams/Email. From there, you'll be able to view the flow to see what went wrong.
+
+## Script Errors
+Currently, this solution uses PowerShell to add and remove local administrators. Each time the script runs on a device, a log file is created under: 
