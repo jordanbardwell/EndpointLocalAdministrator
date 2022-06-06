@@ -96,7 +96,8 @@ Before we import the solution, we need to create the Dataverse Application User 
 
  3. Once the solution has been imported, turn on then edit the flow **Flow - Process Request - PowerShell Script Listener** and copy the HTTP Post URL from the trigger.
  4. Update the environment variable **MothershipURI** with the URL you just copied.
- 5. Turn on the rest of the Flows within the solution.
+ 5. Go back to the application user you created in your environment and give it the ***ELA - Application User*** security role.
+ 6. Turn on the rest of the Flows within the solution.
 
 # How to Guide
 
